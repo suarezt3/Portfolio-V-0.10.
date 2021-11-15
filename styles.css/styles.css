@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@300;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.box-navbar {
+    margin-bottom: 40px;
+    background-color: black;
+}
+
+.box-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+}
+
+/*? Estilos imagen del portafolio  */
+
+.box-image {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 250px;
+    
+    
+}
+
+.card {
+    margin-right: auto;
+    margin-left: auto;
+    /* width: 90%;
+    perspective: 150rem;
+    position: relative;
+    height: 10rem;
+    max-width: 400px;
+    margin: 2rem;
+    box-shadow: none;
+    background: none; */
+    
+}
+
+.card-side {
+    /* height: 35rem; */
+    /* border-radius: 50%; */
+    transition: all 1.5s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 35px; 
+    width: 10%;
+    /* padding: 2rem; */
+    color: white;
+}
+
+
+.image {
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+.card-side.back {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/*? ---------------Estilos de las habilidades ----------------  */
+
+.box-skills {
+    background-color: #333;
+    width: 100%;
+    margin-bottom: 150px;
+}
+
+.inner {
+    padding-top: 20px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 4px;
+    width: 100px;
+    background-color: #2ecc71;
+}
+
+.container-skills {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    padding: 1rem 80px;
+    font-size: 1.2rem;
+}
+
+.skill-box {
+    padding: 1rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.skill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.img {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    border-radius: 45px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.skill-title h3 {
+    color: #fff;
+    margin: 00.5rem;
+}
+
+.skill-icon {
+    width: 50px;
+}
+
+/*?---------------- Estilos seccion de projectos----------------------- */
+
+.box-projects {
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 150px;
+}
+
+.box-title-projects {
+    color: #fff;
+    margin: 00.5rem;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+
+.projects {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+.container-projects {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.name-project h3 {
+    padding-bottom: 10px;
+}
+
+.project {
+    width: 350px;
+    height: 400px;
+    
+
+}
+
+.project img {
+    width: inherit;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+/*!------------ Media queries ------------------*/
+
+@media only screen and (min-width: 481px) {
+    .card-side {
+        left: 80px;
+    }
+
+    .container-skills {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+    .card-side {
+        left: 150px;
+    }
+
+    .container-skills {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .container-projects {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .card-side {
+        left: 200px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .card-side {
+        left: 330px;
+    }
+
+    .container-projects {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+}
+
+@media only screen and (min-width: 1620px) {
+    .card-side {
+        left: 550px;
+    }
+
+    .container-projects {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
