@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.body {
+    background-color: #FFF;
+}
+
 .box-navbar {
     margin-bottom: 40px;
     background-color: black;
@@ -76,7 +80,7 @@
 /*? ---------------Estilos de las habilidades ----------------  */
 
 .box-skills {
-    background-color: #333;
+    background-color: #00120B;
     width: 100%;
     margin-bottom: 150px;
 }
@@ -100,15 +104,16 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     height: 4px;
     width: 100px;
     background-color: #2ecc71;
+    border-radius: 2px;
 }
 
 .container-skills {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -123,12 +128,57 @@
     cursor: pointer;
 }
 
+.skill-box:hover > .skill-title:after > .skill-box:hover > .skill-title:before {
+    width: 35px;
+}
+
+.skill-box:hover .img {
+    transform: translateY(-10px);
+}
+
 .skill-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.skill-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: #2ecc71;
+    transition: .5s;
+}
+
+.skill-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 35px;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: #2ecc71;
+    transition: .5s;
+}
+
+
+.img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90px;
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 45px 0 0 45px;
 }
 
 .img {
@@ -140,23 +190,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .5s;
 }
 
 
 
 .skill-title h3 {
     color: #fff;
-    margin: 00.5rem;
+    margin-top: 0.5rem;
 }
 
 .skill-icon {
     width: 50px;
+    z-index: 2;
 }
 
 /*?---------------- Estilos seccion de projectos----------------------- */
 
 .box-projects {
-    background-color: #333;
+    background-color: #00120B;
     width: 100%;
     color: #fff;
     margin-bottom: 150px;
@@ -203,7 +255,169 @@
 }
 
 
+/*?--------------------- Estilos contacto-------------------- */
 
+.box-contact {
+    margin-bottom: 70px;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("img/bg.jpg") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact-box{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.left{
+	background: url("/assets/images/image-contact.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn-send{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: #27ae60;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact-box{
+		grid-template-columns: 1fr;
+	}
+	.left{
+		height: 200px;
+	}
+}
+
+
+/*?----------- Boton flotante -------------------- */
+
+.bi-arrow-up-circle-fill {
+	font-size: 2rem;
+	color: #27ae60;
+	position: fixed;
+	bottom: 40px;
+	right: 30px;
+	transition: all 300ms ease 0ms;
+	z-index: 5;
+}
+
+.bi-arrow-up-circle-fill:hover {
+  color: var(--color-primary);
+  transform: translateY(-7px) ;
+}
+
+
+/*?---------------- Estilos del Footer----------------------- */
+
+.box-footer {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-content {
+    width: 100%;
+    background-color: #D8E4FF;
+    text-align: center;
+}
+
+.footer-left {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.footer-left a {
+    color: #00120B;
+}
 
 
 
@@ -226,7 +440,7 @@
     }
 
     .container-skills {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(4, 1fr); 
     }
 
     .container-projects {
